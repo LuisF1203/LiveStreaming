@@ -1,4 +1,6 @@
 # LiveStreaming
+
+<pre>
 ### \ \        / /        | |                                                                
 ##v  \ \  /\  / /    ___  | |   ___    ___    _ __ ___     ___                               
 ###   \ \/  \/ /    / _ \ | |  / __|  / _ \  | '_ ` _ \   / _ \                              
@@ -14,5 +16,6 @@
 ### |  _ <  | |  / _ \ | '_ \  \ \ / /  / _ \ | '_ \  | |  / _` |  / _ \                     
 ##v | |_) | | | |  __/ | | | |  \ V /  |  __/ | | | | | | | (_| | | (_) |                    
 ### |____/  |_|  \___| |_| |_|   \_/    \___| |_| |_| |_|  \__,_|  \___/  
+</pre>
  
  ## Este es un proyecto de aprendizaje, para desarrollar una plataforma de live streaming en vite con react js y firebase
