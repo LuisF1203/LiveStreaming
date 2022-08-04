@@ -17,4 +17,4 @@
  |____/  |_|  \___| |_| |_|   \_/    \___| |_| |_| |_|  \__,_|  \___/  
 </pre>
  
- ## Este es un proyecto de aprendizaje, para desarrollar una plataforma de live streaming en vite con react js y firebase
+ ### Este es un proyecto de aprendizaje, para desarrollar una plataforma de live streaming en vite con react js y firebase
