@@ -1,0 +1,15 @@
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(28, 26, 28);
+    border-bottom: 2px solid black;
+    z-index: 100;
+}
+nav ul{
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: space-between;
+}

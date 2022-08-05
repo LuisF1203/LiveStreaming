@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Home,
+  Recording,
   NotFound,
   // Portafolio,
   // Social,
@@ -17,6 +18,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/live" element={<Recording />}/>
       {/* <Route path="/Portafolio" element={<Portafolio />} />
       <Route path="/Social" element={<Social />} />
       <Route path="/Prices" element={<Prices />} />
