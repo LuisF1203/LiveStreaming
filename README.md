@@ -17,4 +17,5 @@
  |____/  |_|  \___| |_| |_|   \_/    \___| |_| |_| |_|  \__,_|  \___/  
 </pre>
  
- ### Este es un proyecto de aprendizaje, para desarrollar una plataforma de live streaming en vite con react js y firebase
+ ### Este es un proyecto de aprendizaje, para desarrollar una plataforma de live streaming en vite con react js y firebase https://livestream-ba085.web.app/
+ ### This is a learning project, to develop a live streaming platform with react js and firebase https://livestream-ba085.web.app/
