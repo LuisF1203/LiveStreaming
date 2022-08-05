@@ -28,14 +28,7 @@ function Home(){
     },[])
     
 
-    const out=()=>{
-        const auth = getAuth();
-        signOut(auth).then(() => {
-        // Sign-out successful.
-        }).catch((error) => {
-        // An error happened.
-        });
-    }
+
 
 
     //AQUI SE OBTIENE EL VIDEO
@@ -53,30 +46,6 @@ return(
         }
         {logged&&
         <div>
-            <nav>
-                    <ul>
-                        <li className="first">
-                                <a href="/">LiveStream</a>
-                        </li>
-                        <li className="mid">
-                            {/* <a href="/" className="sign">LogIn</a> */}
-                            <input type="text" placeholder="Aa"/>
-                            <button>search</button>
-                        </li>
-                        <li className="final">
-                            <ul>
-                                <li><a href="/live" className="GoLive">Go Live</a></li>
-                                <li><a onClick={out} className="sign out">SignOut</a></li>
-                            </ul>
-                            
-                            
-                        </li>
-                    </ul>
-                </nav>
-
-
-
-
         {/* <p>usuario inicado con exito</p>
         <h1>LIVE STREAM</h1> */}
         <div className="streamInfo">

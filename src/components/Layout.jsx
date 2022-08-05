@@ -24,6 +24,15 @@ function Layout({children}){
     },[])
 
 
+    const out=()=>{
+        const auth = getAuth();
+        signOut(auth).then(() => {
+        // Sign-out successful.
+        }).catch((error) => {
+        // An error happened.
+        });
+    }
+
 
     const[loading,setLoading]=useState(true)
     const changeState=()=>{
@@ -42,10 +51,35 @@ function Layout({children}){
             <div>
                 <main 
                 style={{
-                    marginTop:"25px"
+                    marginTop:"70px"
                 }}
                 >
-                    {logged&&children}
+                    {logged&&
+                        <div>
+                            <nav>
+                                <ul>
+                                    <li className="first">
+                                            <a href="/">LiveStream</a>
+                                    </li>
+                                    <li className="mid">
+                                        {/* <a href="/" className="sign">LogIn</a> */}
+                                        <input type="text" placeholder="Aa"/>
+                                        <button>search</button>
+                                    </li>
+                                    <li className="final">
+                                        <ul>
+                                            <li><a href="/live" className="GoLive">Go Live</a></li>
+                                            <li><a onClick={out} className="sign out">SignOut</a></li>
+                                        </ul>
+                                        
+                                        
+                                    </li>
+                                </ul>
+                            </nav>
+                            {children}
+                        </div>
+                        
+                    }
                     {!logged&&
                     <Login/> 
                     }

@@ -1,10 +1,16 @@
 import React from "react";
 import { Layout } from "../components";
-
+import {WebCamRecorder} from "../components";
+import "../components/styles/Recording.css"
 function Recording(){
 return(
     <Layout>
-        <h1>On live</h1>
+        <div>
+        <div className="Record">
+            <h1>NOMBRE DE USUARIO</h1>
+            <WebCamRecorder/>
+        </div>
+        </div>
     </Layout>
 )
 }

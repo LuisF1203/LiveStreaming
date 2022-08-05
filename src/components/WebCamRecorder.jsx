@@ -43,19 +43,34 @@ function WebCamRecorder(){
   }
   useEffect(()=>{
     getUserCamera()
+    document.querySelector(".GoLive").style.display="none"
     // console.log(videoRef.current)
     // console.log(videoRef)
 
-
-    // setInterval(() => {
-    //   pic()
-    // }, 200);
   },[videoRef])
+
+
+  var intervalID;
+  function start(){
+    
+    document.getElementById("btnLive").style.display="none"
+    document.getElementById("btnLiveStop").style.display="block"
+    intervalID = setInterval(pic, 1000);
+}
+
+// Function to stop setInterval call
+function stop(){
+    clearInterval(intervalID);
+    document.getElementById("btnLive").style.display="block"
+    document.getElementById("btnLiveStop").style.display="none"
+}
   return(
     <div>
-      <h1>Camara activada</h1>
+      {/* <h1>Camara activada</h1> */}
       <video ref={videoRef}></video>
-      <button onClick={pic}>foto</button>
+      <br />
+      <button id="btnLive" onClick={start}>Stream</button>
+      <button id="btnLiveStop" onClick={stop}>Stop</button>
       <canvas id="canvas" ref={photoRef} style={{
         display:"none"
       }}></canvas>
