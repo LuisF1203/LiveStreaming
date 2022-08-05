@@ -1,0 +1,65 @@
+.LogIn{
+    /* background-color: rgba(203, 203, 203, 0.200); */
+
+    text-align: center;
+    padding: 10vw;
+    width: 40vw;
+    border-radius: 1rem;
+    margin: auto;
+}
+.LogIn h1{
+    font-size: 40px;
+    color: white;
+}
+.LogIn input[type="email"],.LogIn input[type="password"] {
+    border: 2px solid rgb(0, 187, 255);
+    outline: none;
+    color: white;
+    background-color: rgb(86, 86, 86);
+    /* font-weight: bold; */
+    border-radius: 5rem;
+    transition: 0.2s;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 20vw;
+    text-align: center;
+}
+.LogIn input[type="email"]::placeholder,.LogIn input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.700);
+}
+.LogIn input[type="email"]:focus,.LogIn input[type="password"]:focus {
+    border: none;
+    border-bottom: 3px solid rgb(0, 255, 115);
+    
+}
+.LogIn input[type="submit"]{
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 5px;
+    background:transparent;
+    border: 2px solid rgb(0, 255, 140);
+    width: 20vw;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.2s;
+    
+}.LogIn input[type="submit"]:hover{
+    background-color: rgba(0, 255, 140, 0.164);
+    transform: translateY(-2px);
+    box-shadow: 0px 5px rgba(0, 255, 140, 0.4);
+
+    
+}
+.LogIn a{
+    color: rgb(223, 223, 223);
+    text-decoration: none;
+    /* border-bottom: 0.1px solid rgb(0, 102, 255); */
+    /* transition: 0.2s; */
+    padding-bottom: 5px;
+}
+.LogIn a:hover{
+    color: rgb(0, 102, 255);
+    text-decoration: none;
+    border-bottom: 1.5px solid rgb(0, 102, 255);
+}

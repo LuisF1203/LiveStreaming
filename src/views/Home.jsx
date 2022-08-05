@@ -1,37 +1,42 @@
-import React , {useEffect} from "react";
+import React , {useEffect,useState} from "react";
 import { Layout } from "../components";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs,doc, onSnapshot } from "firebase/firestore";
 import db from "../firebase/firebaseConfig"
+import {WebCamRecorder, Login} from "../components";
 function Home(){
-    useEffect(()=>{
-        console.log(import.meta.env.VITE_APP_FIREBASE_APIKEY)
-        console.log(import.meta.env.VITE_APP_FIREBASE_AUTHDOMAIN)
-        console.log(import.meta.env.VITE_APP_FIREBASE_PROJECTID)
-        console.log(import.meta.env.VITE_APP_FIREBASE_STORAGEBUCKET)
-        console.log(import.meta.env.VITE_APP_FIREBASE_MESSAGINGSENDERID)
-        console.log(import.meta.env.VITE_APP_FIREBASE_APPID)
-
-
-        const getData=async()=>{
-            // const data= await(getDocs(collection(db, 'users')))
-            // console.log(data.docs[0].data())
-            const querySnapshot = await getDocs(collection(db, "users"));
-            querySnapshot.forEach((doc) => {
-            console.log(doc.id,"=>",doc.data());
-            });
-        }
-
-        // const querySnapshot = await getDocs(collection(db, "users"));
-        // querySnapshot.forEach((doc) => {
-        // console.log(`${doc.id} => ${doc.data()}`);
-        // });
-        getData()
-    },[])
+    const [logged,setLog]=useState(false)
+    //AQUI SE OBTIENE EL VIDEO
+    // const [frame,setFrame]=useState(null)
+    // useEffect(()=>{
+    //     const unsub = onSnapshot(doc(db, "video", "stream"), (doc) => {
+    //         console.log("Current data: ", doc.data());
+    //         setFrame(doc.data().src)
+    //     });
+    // },[])
 return(
     <Layout>
+
+        {!logged&&
+        <Login/>
+        }
+        {logged&&
         <div>
-        <h1>SECCION HOME</h1>
+        <p>usuario inicado con exito</p>
+        <h1>LIVE STREAM</h1>
+        <WebCamRecorder/>
+        <img src={frame}></img>
         </div>
+        }
+
+        {/* {logged?
+        <p>Inicia sesión para continuar</p>
+        :
+        <p>Usuario iniciado</p>} */}
+        {/* <div>
+        <h1>LIVE STREAM</h1>
+        <WebCamRecorder/>
+        <img src={frame}></img>
+        </div> */}
     </Layout>
 
 )

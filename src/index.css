@@ -6,7 +6,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* background-color: #242424; */
+  /* background:linear-gradient(-45deg,green,yellow); */
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,8 +20,22 @@
 body {
   margin: 0;
   padding: 0;
-  /* display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh; */
+  background:linear-gradient(315deg,#590080,#006f97,#00bcff,#590080);
+  background-size: 400% 400%;
+  /* animation-name: bg;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; */
+  animation: bg 10s ease infinite;
+}
+@keyframes bg {
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+  
 }
