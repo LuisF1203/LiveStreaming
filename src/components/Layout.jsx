@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from "react";
 import { getAuth, onAuthStateChanged,signOut } from "firebase/auth";
 import {WebCamRecorder, Login} from "../components";
+import {BsDot} from "react-icons/bs"
 import "../components/styles/Layout.css"
 
 function Layout({children}){
@@ -43,7 +44,7 @@ function Layout({children}){
     if(loading){
         changeState();
         return(
-            <div>CARGANDO...</div>
+            <div className="Char"><span className="CharDot one"> <BsDot/> </span><span className="CharDot two"> <BsDot/> </span><span className="CharDot three"> <BsDot/> </span></div>
         )
     }
     else{

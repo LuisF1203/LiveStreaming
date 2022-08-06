@@ -21,6 +21,7 @@ function Login(){
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode,"=>",errorMessage)
+            document.getElementById("logError").innerHTML=errorCode;
         });
     }
 const log=(e)=>{        
@@ -39,6 +40,20 @@ const log=(e)=>{
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode,"=>",errorMessage)
+        // alert(errorCode)
+        document.getElementById("logError").innerHTML=errorCode;
+        if(errorCode=="auth/wrong-password"){
+            const inputPass=form.pass;
+            console.log(inputPass)
+            inputPass.style.borderBottom="2px solid red"
+            inputPass.style.animation="wrong 0.2s 3"
+            
+        }
+        // else{
+        //     if(errorCode=="auth/user-not-found"){
+        //         console.log("user not found")
+        //     }
+        // }
     });
 
     console.log(email,pass)
@@ -50,8 +65,9 @@ return(
         <form id="form" onSubmit={log}>
             <input type="email" name="email" required placeholder="email"/>
             <br />
-            <input type="password" name="pass" id=""  required placeholder="password"/>
+            <input type="password" name="pass" id="passInput"  required placeholder="password"/>
             <br />
+            <p id="logError"></p>
             <a href="#">Forgot password?</a>
             <br />
             <br />
@@ -70,10 +86,11 @@ return(
             <br />
             <input type="password" name="pass" id=""  required placeholder="password"/>
             <br />
+            <p id="logError"></p>
             <a href="#">Forgot password?</a>
             <br />
             <br />
-            <input type="submit" value="Login" />
+            <input type="submit" value="SignUp" />
             <br />
             <br />
             <a onClick={()=>{

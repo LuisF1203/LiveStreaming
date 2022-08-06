@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState}from "react";
 import Webcam from "react-webcam";
 import { doc, setDoc } from "firebase/firestore";
+import "../components/styles/WebCamRecorder.css"
 import db from "../firebase/firebaseConfig";
 
 function WebCamRecorder(){
@@ -8,7 +9,8 @@ function WebCamRecorder(){
   let photoRef=useRef(null)
   const getUserCamera=()=>{
     navigator.mediaDevices.getUserMedia({
-      video:true
+      video:true,
+      audio:true
     })
     .then((stream)=>{
       let video=videoRef.current
@@ -67,7 +69,7 @@ function stop(){
   return(
     <div>
       {/* <h1>Camara activada</h1> */}
-      <video ref={videoRef}></video>
+      <video ref={videoRef} muted></video>
       <br />
       <button id="btnLive" onClick={start}>Stream</button>
       <button id="btnLiveStop" onClick={stop}>Stop</button>

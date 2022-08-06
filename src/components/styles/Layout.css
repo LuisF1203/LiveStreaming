@@ -13,3 +13,43 @@ nav ul{
     list-style: none;
     justify-content: space-between;
 }
+.Char{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 50px;
+    transform: translateX(-50%);
+}
+.CharDot svg{
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+}
+.CharDot.one{
+    /* color: blue; */
+    animation: CharDot 1.5s infinite;
+    opacity: 0;
+    /* animation-delay: 1s; */
+}
+.CharDot.two{
+    /* color: blue; */
+    animation: CharDot 1.5s infinite;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+.CharDot.three{
+    /* color: blue; */
+    animation: CharDot 1.5s infinite;
+    opacity: 0;
+    animation-delay: 1s;
+}
+@keyframes CharDot {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0;
+    }
+}

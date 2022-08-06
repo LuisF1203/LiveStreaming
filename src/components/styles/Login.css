@@ -1,3 +1,6 @@
+#form a{
+    cursor: pointer;
+}
 .LogIn{
     /* background-color: rgba(203, 203, 203, 0.200); */
 
@@ -32,6 +35,27 @@
     border-bottom: 3px solid rgb(0, 255, 115);
     
 }
+#passInput{
+    /* animation-name: wrong;
+    animation-duration: 0.2s;
+    animation-iteration-count: 3; */
+    /* animation: wrong 0.2s 3; */
+    /* background-color: red !important; */
+}
+@keyframes wrong {
+    0%{
+        transform: translateX(-10px);
+    }
+    50%{
+        transform: translateX(10px);
+    
+    }
+    100%{
+        transform: translateX(-10px);
+    
+    }
+    
+}
 .LogIn input[type="submit"]{
     cursor: pointer;
     border-radius: 0.5rem;
@@ -64,3 +88,7 @@
     border-bottom: 1.5px solid rgb(0, 102, 255);
 }
 
+#logError{
+    color: rgb(255, 76, 76);
+    font-weight: bold;
+}
