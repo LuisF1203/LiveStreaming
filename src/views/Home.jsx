@@ -15,11 +15,9 @@ function Home(){
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 const uid = user.uid;
-                // console.log("user logged =>",user)
                 setLog(true)
-                // ...
+                // we get current user
             } else {
-                // console.log("user signed out")
                 setLog(false)
                 // User is signed out
                 // ...
@@ -30,24 +28,21 @@ function Home(){
 
 
 
-
-    //AQUI SE OBTIENE EL VIDEO
-    const [frame,setFrame]=useState(null)
-    useEffect(()=>{
-        const unsub = onSnapshot(doc(db, "video", "stream"), (doc) => {
+    
+    const [frame,setFrame]=useState(null) //with this state we get our frame
+    useEffect(()=>{//we get our frames
+        const unsub = onSnapshot(doc(db, "video", "stream"), (doc) => { //we create an onSnapshot to get our doc from firebase, this will give us a realtime doc, so it will change our frame
             console.log("Current data: ", doc.data());
-            setFrame(doc.data().src)
+            setFrame(doc.data().src) //we set our frame
         });
     },[])
 return(
     <Layout>
-        {!logged&&
+        {!logged&& //if user is not logged we render our login component
         <Login/>
         }
-        {logged&&
+        {logged&& //if user is logged we render our homepage
         <div>
-        {/* <p>usuario inicado con exito</p>
-        <h1>LIVE STREAM</h1> */}
         <div className="streamInfo">
             <span className="live">LIVE <TbLivePhoto size={20}/> </span>
             <img className="videoStream" src={frame}></img>
@@ -79,7 +74,6 @@ return(
                 
             </div>
         </div>
-        {/* <WebCamRecorder/> */}
         </div>
         }
     </Layout>
@@ -88,4 +82,4 @@ return(
 
 }
 
-export default Home;
+export default Home; //we export our home view
